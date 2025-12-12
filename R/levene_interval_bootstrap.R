@@ -40,7 +40,8 @@ levene_interval_bootstrap <- function(
     # list-of-dfs path
     lapply(data, function(d) {
       stopifnot(is.data.frame(d), all(c("L","R") %in% names(d)))
-      d <- transform(d, L = as.numeric(L), R = as.numeric(R))
+      d[["L"]] <- as.numeric(d[["L"]])
+      d[["R"]] <- as.numeric(d[["R"]])
       swap <- which(d$L > d$R); if (length(swap)) { tmp <- d$L[swap]; d$L[swap] <- d$R[swap]; d$R[swap] <- tmp }
       d
     })
@@ -51,7 +52,11 @@ levene_interval_bootstrap <- function(
     if (!all(c("L","R", group) %in% names(data))) {
       stop("`data` must have columns L, R, and the specified `group`.")
     }
-    split(transform(data, L = as.numeric(L), R = as.numeric(R)), data[[group]])
+    data2 <- data
+    data2[["L"]] <- as.numeric(data2[["L"]])
+    data2[["R"]] <- as.numeric(data2[["R"]])
+    split(data2, data2[[group]])
+
   }
 
   k   <- length(X)

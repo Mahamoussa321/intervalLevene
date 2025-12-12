@@ -13,6 +13,10 @@ renv/python/
 # ---- Build/check outputs ----
 *.tar.gz
 *.Rcheck/
+.Rbuildignore
+
+# ---- Project outputs / dev artifacts ----
+figs_sim/
 
 # ---- OS / editor junk ----
 .DS_Store
@@ -21,6 +25,5 @@ Thumbs.db
 *~
 
 
-# Large local data (not on GitHub)
-data/soft_data_USA.csv
+
 

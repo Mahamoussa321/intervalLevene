@@ -2,3 +2,6 @@
 ^renv\.lock$
 ^intervalLevene\.Rproj$
 ^\.Rproj\.user$
+^LICENSE\.md$
+^figs_sim$
+^scripts$
