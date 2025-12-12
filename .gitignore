@@ -1,0 +1,26 @@
+# ---- R / RStudio ----
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Rprofile
+
+# ---- renv (keep renv.lock, ignore heavy folders) ----
+renv/library/
+renv/staging/
+renv/python/
+
+# ---- Build/check outputs ----
+*.tar.gz
+*.Rcheck/
+
+# ---- OS / editor junk ----
+.DS_Store
+Thumbs.db
+*.bak
+*~
+
+
+# Large local data (not on GitHub)
+data/soft_data_USA.csv
+

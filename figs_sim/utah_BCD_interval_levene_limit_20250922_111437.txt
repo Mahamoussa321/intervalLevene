@@ -1,0 +1,11 @@
+Utah Interval–Levene case study (limiting reference)
+timestamp : 20250922_111437
+data_file : C:/Users/maham/Desktop/intervalLevene/data/soft_data_USA.csv
+k         : 3
+N         : 1460
+counts    : B=940, C=140, D=380
+omega     : 1
+F         : 13.394145
+cutoff    : 2.9957 (alpha = 0.05)
+p_value   : 1.52404e-06
+decision  : REJECT H0
