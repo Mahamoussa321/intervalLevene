@@ -1,14 +1,21 @@
 Package: intervalLevene
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Type: Package
+Title: Levene-Type Tests for Homogeneity of Dispersion with Interval-Valued Data
+Version: 0.1.0
+Authors@R:
+    c(person("Maha", "Moussa", role = c("aut", "cre"),
+             email = "YOUR_EMAIL"),
+      person("Yan", "Sun", role = "aut"),
+      person("Przemyslaw", "Grzegorzewski", role = "aut"))
+Description: Implements an interval-valued extension of Levene's test for
+    homogeneity of dispersion across groups using a center-radius representation,
+    with a limiting reference distribution and bootstrap competitors, plus
+    simulation utilities for reproducible evaluation.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-Imports: 
+Imports:
     boot,
     data.table,
     dplyr,
@@ -19,7 +26,10 @@ Suggests:
     progressr,
     purrr,
     readr,
-    tibble
-Depends: 
-    R (>= 3.5)
-LazyData: true
+    tibble,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+URL: https://github.com/Mahamoussa321/intervalLevene
+BugReports: https://github.com/Mahamoussa321/intervalLevene/issues
+Depends:
+    R (>= 4.1)
