@@ -33,3 +33,5 @@ URL: https://github.com/Mahamoussa321/intervalLevene
 BugReports: https://github.com/Mahamoussa321/intervalLevene/issues
 Depends:
     R (>= 4.1)
+LazyData: true
+LazyDataCompression: xz
