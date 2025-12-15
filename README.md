@@ -12,7 +12,7 @@ intervals. It includes a fast limiting reference distribution for an
 ANOVA-style statistic, bootstrap competitors for comparison, and
 simulation utilities used in the accompanying manuscript.
 
-\##Installation
+## Installation
 
 You can install the development version from GitHub with:
 
