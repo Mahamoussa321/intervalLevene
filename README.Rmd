@@ -15,6 +15,7 @@ knitr::opts_chunk$set(
 
 ## intervalLevene
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/Mahamoussa321/intervalLevene/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Mahamoussa321/intervalLevene/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 intervalLevene provides Levene-type tests for homogeneity of dispersion with

@@ -3,14 +3,14 @@ Type: Package
 Title: Levene-Type Tests for Homogeneity of Dispersion with Interval-Valued Data
 Version: 0.1.0
 Authors@R:
-    c(person("Maha", "Moussa", role = c("aut", "cre"),
-             email = "YOUR_EMAIL"),
+    c(
+      person("Maha", "Moussa", email = "maha.moussa@usu.edu", role = c("aut","cre")),
       person("Yan", "Sun", role = "aut"),
-      person("Przemyslaw", "Grzegorzewski", role = "aut"))
-Description: Implements an interval-valued extension of Levene's test for
-    homogeneity of dispersion across groups using a center-radius representation,
-    with a limiting reference distribution and bootstrap competitors, plus
-    simulation utilities for reproducible evaluation.
+      person("Przemysław", "Grzegorzewski", role = "aut")
+    )
+Description: Implements Levene-type tests for homogeneity of dispersion for interval-valued data
+    using a center–radius representation, including a fast limiting reference distribution and
+    bootstrap competitors.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

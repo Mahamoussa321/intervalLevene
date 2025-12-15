@@ -4,6 +4,8 @@
 ## intervalLevene
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/Mahamoussa321/intervalLevene/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Mahamoussa321/intervalLevene/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 intervalLevene provides Levene-type tests for homogeneity of dispersion
@@ -28,12 +30,12 @@ The package ships a dataset used in the Utah SWE case study.
 ``` r
 data("soft_data_utah")
 str(soft_data_utah)
-#> Classes 'tbl_df', 'tbl' and 'data.frame':    1820 obs. of  5 variables:
-#>  $ lon     : num  -114 -113 -113 -113 -112 ...
-#>  $ lat     : num  42 42 42 42 42 ...
-#>  $ KG_major: chr  "B" "B" "B" "D" ...
-#>  $ center  : num  3.33e-04 4.51e-03 1.92e-05 1.61e-04 6.84e-05 ...
-#>  $ radius  : num  2.354 1.039 0.131 1.136 0.484 ...
+#> tibble [1,820 × 5] (S3: tbl_df/tbl/data.frame)
+#>  $ lon     : num [1:1820] -114 -113 -113 -113 -112 ...
+#>  $ lat     : num [1:1820] 42 42 42 42 42 ...
+#>  $ KG_major: chr [1:1820] "B" "B" "B" "D" ...
+#>  $ center  : num [1:1820] 3.33e-04 4.51e-03 1.92e-05 1.61e-04 6.84e-05 ...
+#>  $ radius  : num [1:1820] 2.354 1.039 0.131 1.136 0.484 ...
 table(soft_data_utah$KG_major)
 #> 
 #>    B    C    D 
@@ -48,8 +50,6 @@ This is a basic example which shows you how to solve a common problem:
 library(intervalLevene)
 
 data("soft_data_utah", package = "intervalLevene")
-#> Warning in data("soft_data_utah", package = "intervalLevene"): data set
-#> 'soft_data_utah' not found
 
 # Keep B/C/D only
 utah <- subset(soft_data_utah, KG_major %in% c("B", "C", "D"))

@@ -5,3 +5,7 @@
 ^LICENSE\.md$
 ^figs_sim$
 ^scripts$
+^tables_pub$
+^tables_sim$
+^README\.Rmd$
+^\.github$
