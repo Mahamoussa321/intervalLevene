@@ -1,0 +1,89 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+## intervalLevene
+<!-- badges: start -->
+<!-- badges: end -->
+
+intervalLevene provides Levene-type tests for homogeneity of dispersion with
+interval-valued data, using a center–radius representation of intervals.
+It includes a fast limiting reference distribution for an ANOVA-style statistic,
+bootstrap competitors for comparison, and simulation utilities used in the
+accompanying manuscript.
+
+##Installation
+
+You can install the development version from GitHub with:
+
+```{r, eval = FALSE}
+## install.packages("pak")
+pak::pak("Mahamoussa321/intervalLevene")
+```
+## Data: Utah SWE case study
+
+The package ships a dataset used in the Utah SWE case study.
+
+
+```{r}
+data("soft_data_utah")
+str(soft_data_utah)
+table(soft_data_utah$KG_major)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(intervalLevene)
+
+data("soft_data_utah", package = "intervalLevene")
+
+# Keep B/C/D only
+utah <- subset(soft_data_utah, KG_major %in% c("B", "C", "D"))
+utah$KG_major <- factor(utah$KG_major, levels = c("B", "C", "D"))
+
+# Interval–Levene statistic (limiting reference)
+omega <- 1
+F_obs <- levene_interval_F(
+  df    = utah[, c("center", "radius")],
+  group = utah$KG_major,
+  omega = omega
+)
+
+# Limiting reference: (k-1) * F  ~  ChiSquare(df = k-1)
+k <- nlevels(utah$KG_major)
+df1 <- k - 1
+p_lim <- 1 - pchisq(df1 * F_obs, df = df1)
+
+# Decision at alpha = 0.05
+alpha <- 0.05
+crit_lim <- qchisq(1 - alpha, df = df1) / df1
+reject <- (F_obs > crit_lim)
+
+list(
+  F_obs    = F_obs,
+  p_value  = p_lim,
+  crit_0_05 = crit_lim,
+  reject_0_05 = reject
+)
+
+```
+
+## Reproducibility
+
+Paper outputs (tables/figures) are stored in folders such as tables_pub/,
+tables_sim/, and figs_sim. These are kept in the GitHub repository for
+reproducibility, but are excluded from the package build via .Rbuildignore.
