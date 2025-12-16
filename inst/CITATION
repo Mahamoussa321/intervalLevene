@@ -1,0 +1,16 @@
+citHeader("To cite intervalLevene in publications:")
+
+citEntry(
+  entry = "Manual",
+  title = "intervalLevene: Levene-Type Tests for Homogeneity of Dispersion with Interval-Valued Data",
+  author = personList(
+    person("Maha", "Moussa"),
+    person("Yan", "Sun"),
+    person("Przemyslaw", "Grzegorzewski")
+  ),
+  year = "2025",
+  note = "R package version 0.1.0",
+  url  = "https://github.com/Mahamoussa321/intervalLevene",
+  textVersion =
+    "Moussa M, Sun Y, Grzegorzewski P (2025). intervalLevene: Levene-Type Tests for Homogeneity of Dispersion with Interval-Valued Data. R package version 0.1.0. https://github.com/Mahamoussa321/intervalLevene"
+)
